@@ -15,6 +15,11 @@ function score(scoresArray) {
 
       // Increment frameCounter to next frame
       frameCounter += 1;
+    } else if ((scoresArray[frameCounter] + scoresArray[frameCounter + 1]) === 10) {
+      playerScore += (10 + scoresArray[frameCounter + 2]);
+
+      // Increment frameCounter by two because both rolls of this frame have been considered
+      frameCounter += 2;
     } else {
       playerScore += (scoresArray[frameCounter] + scoresArray[frameCounter + 1]);
 

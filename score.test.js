@@ -15,5 +15,9 @@ describe('score', () => {
     test('when input scores contains some strikes but no spares', () => {
       expect(score([3, 6, 10, 7, 2, 5, 2, 2, 5, 4, 5, 7, 1, 10, 10, 4, 5])).toBe(120);
     });
+
+    test('when input scores contains some strikes and spares', () => {
+      expect(score([3, 6, 10, 7, 2, 5, 5, 2, 5, 4, 5, 7, 1, 10, 10, 4, 5])).toBe(125);
+    });
   });
 });
