@@ -8,27 +8,44 @@ function score(scoresArray) {
   const validFrames = verifyFrames(scoresArray);
   if (!validFrames) return undefined;
 
-  let playerScore = 0;
-  for (let i = 0, frameCounter = 0; i < 10; i += 1) {
-    if (scoresArray[frameCounter] === 10) {
-      playerScore += (10 + scoresArray[frameCounter + 1] + scoresArray[frameCounter + 2]);
+  // const sumFromTo = (i, j) => {
+  //   let sum = 0;
+  //   for (let k = 0; k < j; k += 1) {
+  //     if ((i + k) < scoresArray.length) {
+  //       sum += scoresArray[i + k];
+  //     }
+  //   }
+  //   return sum;
+  // };
+  const sumArray = inputArray => inputArray.reduce((sum, current) => {
+    let tempSum = sum;
+    tempSum += current;
+    return tempSum;
+  }, 0);
 
-      // Increment frameCounter to next frame
-      frameCounter += 1;
-    } else if ((scoresArray[frameCounter] + scoresArray[frameCounter + 1]) === 10) {
-      playerScore += (10 + scoresArray[frameCounter + 2]);
+  // Copy scoresArray to temporary array
+  let scores = scoresArray.slice();
 
-      // Increment frameCounter by two because both rolls of this frame have been considered
-      frameCounter += 2;
+  // Array to hold scores per round
+  const scoresPerFrame = [];
+  for (let i = 0; i < 9; i += 1) {
+    if (scores[0] === 10) {
+      scoresPerFrame.push(sumArray(scores.slice(0, 3)));
+      scores = scores.splice(1);
+    } else if (sumArray(scores.slice(0, 2)) === 10) {
+      scoresPerFrame.push(sumArray(scores.slice(0, 3)));
+      scores = scores.splice(2);
     } else {
-      playerScore += (scoresArray[frameCounter] + scoresArray[frameCounter + 1]);
-
-      // Increment frameCounter by two because both rolls of this frame have been considered
-      frameCounter += 2;
+      scoresPerFrame.push(sumArray(scores.slice(0, 2)));
+      scores = scores.splice(2);
     }
   }
 
-  return playerScore;
+  // Push the score of the 10th round
+  scoresPerFrame.push(sumArray(scores));
+
+  // Return the total score
+  return sumArray(scoresPerFrame);
 }
 
 module.exports = score;
