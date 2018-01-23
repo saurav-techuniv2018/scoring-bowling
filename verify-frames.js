@@ -19,10 +19,12 @@ function verifyFrames(scoresArray) {
     return framesArray;
   }, []);
 
-  if (resultFramesArray.length === 10) {
-    return [true, resultFramesArray];
+  if (resultFramesArray.length > 11 || resultFramesArray.length < 10) {
+    return false;
+  } else if (resultFramesArray[9] > 20) {
+    return false;
   }
-  return [false, null];
+  return true;
 }
 
 module.exports = verifyFrames;
