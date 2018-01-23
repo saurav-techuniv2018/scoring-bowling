@@ -8,15 +8,6 @@ function score(scoresArray) {
   const validFrames = verifyFrames(scoresArray);
   if (!validFrames) return undefined;
 
-  // const sumFromTo = (i, j) => {
-  //   let sum = 0;
-  //   for (let k = 0; k < j; k += 1) {
-  //     if ((i + k) < scoresArray.length) {
-  //       sum += scoresArray[i + k];
-  //     }
-  //   }
-  //   return sum;
-  // };
   const sumArray = inputArray => inputArray.reduce((sum, current) => {
     let tempSum = sum;
     tempSum += current;
