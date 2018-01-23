@@ -5,6 +5,9 @@ describe('score', () => {
     test('when input scores do not make up 10 frames', () => {
       expect(score([1, 2, 4, 5])).toBe(undefined);
     });
+    test('when input scores is empty', () => {
+      expect(score([])).toBe(undefined);
+    });
   });
 
   describe('should return score', () => {
