@@ -10,5 +10,14 @@ describe('verifyNumber', () => {
       expect(verifyNumber(undefined)).toBe(false);
     });
   });
+
+  describe('Should return true when input is valid', () => {
+    test('when input is a positive number less than equal to 10', () => {
+      expect(verifyNumber(9)).toBe(true);
+    });
+    test('when input is positive but equal to 10', () => {
+      expect(verifyNumber(10)).toBe(true);
+    });
+  });
 });
 
