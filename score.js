@@ -9,11 +9,17 @@ function score(scoresArray) {
   if (!validFrames) return undefined;
 
   let playerScore = 0;
-  for (let i = 0; i < 10; i += 1) {
-    playerScore += scoresArray[i];
+  for (let i = 0, frameCounter = 0; i < 10; i += 1) {
+    if (scoresArray[frameCounter] === 10) {
+      playerScore += (10 + scoresArray[frameCounter + 1] + scoresArray[frameCounter + 2]);
 
-    if (i + 1 <= scoresArray.length - 1) {
-      playerScore += scoresArray[i + 1];
+      // Increment frameCounter to next frame
+      frameCounter += 1;
+    } else {
+      playerScore += (scoresArray[frameCounter] + scoresArray[frameCounter + 1]);
+
+      // Increment frameCounter by two because both rolls of this frame have been considered
+      frameCounter += 2;
     }
   }
 
