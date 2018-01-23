@@ -7,6 +7,7 @@ function verifyNumber(inputNumber) {
     return false;
   }
 
+  if (inputNumber < 0 || inputNumber > 10) return false;
   return true;
 }
 

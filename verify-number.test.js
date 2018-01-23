@@ -9,6 +9,14 @@ describe('verifyNumber', () => {
     test('when input is undefined', () => {
       expect(verifyNumber(undefined)).toBe(false);
     });
+
+    test('when input is a number but larger than 10', () => {
+      expect(verifyNumber(13)).toBe(false);
+    });
+
+    test('when input is negative', () => {
+      expect(verifyNumber(-20)).toBe(false);
+    });
   });
 
   describe('Should return true when input is valid', () => {
