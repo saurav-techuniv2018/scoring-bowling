@@ -1,3 +1,4 @@
+const sumArray = require('./sum-array');
 const verifyInput = require('./verify-input');
 const verifyFrames = require('./verify-frames');
 
@@ -7,12 +8,6 @@ function score(scoresArray) {
 
   const validFrames = verifyFrames(scoresArray);
   if (!validFrames) return undefined;
-
-  const sumArray = inputArray => inputArray.reduce((sum, current) => {
-    let tempSum = sum;
-    tempSum += current;
-    return tempSum;
-  }, 0);
 
   // Copy scoresArray to temporary array
   let scores = scoresArray.slice();

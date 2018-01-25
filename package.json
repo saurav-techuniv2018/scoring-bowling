@@ -4,7 +4,9 @@
   "description": "Exercise to calculate score in a game of bowling.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose",
+    "coverage": "jest --coverage",
+    "report": "npm run coverage && open coverage/lcov-report/index.html"
   },
   "repository": {
     "type": "git",
