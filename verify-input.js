@@ -1,12 +1,9 @@
-const verifyNumber = require('./verify-number');
+const verifyFrames = require('./verify-frames');
 
 function verifyInput(scoreArray) {
   if (!Array.isArray(scoreArray)) { return false; }
 
-  for (let i = 0; i < scoreArray.length; i += 1) {
-    if (!verifyNumber(scoreArray[i])) return false;
-  }
-  return true;
+  return verifyFrames(scoreArray);
 }
 
 module.exports = verifyInput;
