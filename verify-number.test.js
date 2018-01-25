@@ -17,6 +17,14 @@ describe('verifyNumber', () => {
     test('when input is negative', () => {
       expect(verifyNumber(-20)).toBe(false);
     });
+
+    test('when input is Infinity', () => {
+      expect(verifyNumber(Infinity)).toBe(false);
+    });
+
+    test('when input is negative Infinity', () => {
+      expect(verifyNumber(-Infinity)).toBe(false);
+    });
   });
 
   describe('Should return true when input is valid', () => {
