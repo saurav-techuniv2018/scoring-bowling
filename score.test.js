@@ -24,7 +24,7 @@ describe('score', () => {
     });
 
     test('when input contains only strikes', () => {
-      expect(score([10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])).toBe(290);
+      expect(score([10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])).toBe(300);
     });
   });
 });
