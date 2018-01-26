@@ -11,6 +11,9 @@ describe('score', () => {
     test('when input contains invalid numbers in the scores', () => {
       expect(score([5, 3, 4, Infinity])).toBe(undefined);
     });
+    test('when input scores does not make the frames specified', () => {
+      expect(score([3, 4, 5, 3, 8, 0], 4)).toBe(undefined);
+    });
   });
 
   describe('should return score', () => {
@@ -28,6 +31,12 @@ describe('score', () => {
     });
     test('when input scores contains some strikes and spares', () => {
       expect(score([3, 6, 10, 7, 2, 5, 5, 2, 5, 4, 5, 7, 1, 10, 10, 4, 5])).toBe(125);
+    });
+    test('when input contains scores with only spares for the specified number of frames', () => {
+      expect(score([2, 5, 6, 4, 3, 4, 2, 0], 4)).toBe(29);
+    });
+    test('when input contains scores for the specified number of frames', () => {
+      expect(score([2, 3, 5, 5, 10], 2)).toBe(25);
     });
   });
 });

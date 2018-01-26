@@ -1,8 +1,8 @@
 const sumArray = require('./sum-array');
 const verifyFrames = require('./verify-frames');
 
-function score(scoresArray) {
-  const validFrames = verifyFrames(scoresArray);
+function score(scoresArray, framesCount = 10) {
+  const validFrames = verifyFrames(scoresArray, framesCount);
   if (!validFrames) return undefined;
 
   // Copy scoresArray to temporary array
@@ -10,7 +10,7 @@ function score(scoresArray) {
 
   // Array to hold scores per round
   const scoresPerFrame = [];
-  for (let i = 0; i < 9; i += 1) {
+  for (let i = 0; i < framesCount - 1; i += 1) {
     if (scores[0] === 10) {
       scoresPerFrame.push(sumArray(scores.slice(0, 3)));
       scores = scores.splice(1);
