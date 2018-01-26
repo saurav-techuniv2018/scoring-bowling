@@ -1,6 +1,12 @@
 const sumArray = require('./sum-array');
 const isScoreValid = require('./is-score-valid');
 
+/**
+ * checks whether the array passed makes up a valid game of bowling with specified number of frames
+ * @param {any} scoresArray - an array containing scores for the game
+ * @param {number} [frames=10] - number of frames in the game
+ * @returns {Boolean}
+ */
 const verifyFrames = (scoresArray, frames = 10) => {
   // Copy scoresArray to temporary array
   let scores = scoresArray.slice();
