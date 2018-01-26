@@ -1,6 +1,14 @@
+const args = require('command-line-args');
 const score = require('./score');
 
-const scoresArray = process.argv.slice(2)
-  .map(p => parseInt(p, 10));
+const optionDefinitions = [
+  {
+    name: 'scores', alias: 's', type: Number, multiple: true, defaultOption: true,
+  },
+  {
+    name: 'frames', alias: 'f', type: Number,
+  },
+];
+const receivedArguments = args(optionDefinitions);
 
-console.log(score(scoresArray));
+console.log(score(receivedArguments.scores, receivedArguments.frames));
