@@ -1,6 +1,13 @@
 const sumArray = require('./sum-array');
 const verifyFrames = require('./verify-frames');
 
+/**
+ * calculates the score for a game of bowling
+ * @param {Number[]} scoresArray - an array containing scores for the game
+ * @param {Number} [framesCount=10] - number of frames in the game
+ * @returns {Number | undefined} the score if scoresArray is a valid array of scores or
+ * undefined if scoresArray contains invalid scores
+ */
 const score = (scoresArray, framesCount = 10) => {
   const validFrames = verifyFrames(scoresArray, framesCount);
   if (!validFrames) return undefined;
