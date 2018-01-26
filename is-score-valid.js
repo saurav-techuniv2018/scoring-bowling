@@ -1,7 +1,7 @@
 /**
  * checks whether the passed inputScore is a valid score or not in a game of bowling
- * @param {Number} inputScore
- * @returns {Boolean}
+ * @param {Number} inputScore - the score to validate
+ * @returns {Boolean} true if the score is valid or false if it is invalid
  */
 const isScoreValid = (inputScore) => {
   if (typeof inputScore !== 'number') {
