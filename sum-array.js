@@ -1,7 +1,7 @@
 /**
- * calculates the sum of the inputArray containing positive integers.
- * @param {Number[]} an array containing positive integers
- * @returns sum of the array
+ * calculates the sum of the inputArray containing positive integers
+ * @param {Number[]} positiveNumbersArray an array containing positive integers
+ * @returns sum of the elements in the array
  */
 const sumArray = positiveNumbersArray =>
   positiveNumbersArray.reduce((sum, currentValue) => {
