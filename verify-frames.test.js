@@ -38,5 +38,9 @@ describe('verifyFrames', () => {
       expect(verifyFrames([10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]))
         .toEqual(true);
     });
+    test('when input scores contains a frame where a roll is zero', () => {
+      expect(verifyFrames([3, 6, 0, 10, 2, 2, 3, 4, 5, 2, 1, 4, 3, 4, 2, 4, 5, 2, 5, 5, 10]))
+        .toBe(true);
+    });
   });
 });

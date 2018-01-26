@@ -39,9 +39,6 @@ const verifyFrames = (scoresArray, frames = 10) => {
       }
       return true;
     } else if (!isFrameComplete) {
-      // If frame is not complete, currentValue cannot be 10
-      if (currentValue === 10) return false;
-
       framesArray[framesCount].push(currentValue);
       addedScoresCount += 1;
       // Complete frame
