@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --verbose",
     "coverage": "jest --coverage",
-    "report": "npm run coverage && open coverage/lcov-report/index.html"
+    "report": "npm run coverage && open coverage/lcov-report/index.html",
+    "doc": "yarn jsdoc *.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "jest": "^22.1.4"
+    "jest": "^22.1.4",
+    "jsdoc": "^3.5.5"
   }
 }
