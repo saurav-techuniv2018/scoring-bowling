@@ -1,7 +1,7 @@
 const sumArray = require('./sum-array');
 const isScoreValid = require('./is-score-valid');
 
-function verifyFrames(scoresArray, frames = 10) {
+const verifyFrames = (scoresArray, frames = 10) => {
   // Copy scoresArray to temporary array
   let scores = scoresArray.slice();
 
@@ -82,6 +82,6 @@ function verifyFrames(scoresArray, frames = 10) {
   lastRound.push(scores[0]);
 
   return true;
-}
+};
 
 module.exports = verifyFrames;

@@ -1,4 +1,4 @@
-function isScoreValid(inputNumber) {
+const isScoreValid = (inputNumber) => {
   if (typeof inputNumber !== 'number') {
     return false;
   }
@@ -9,6 +9,6 @@ function isScoreValid(inputNumber) {
 
   if (inputNumber < 0 || inputNumber > 10) return false;
   return true;
-}
+};
 
 module.exports = isScoreValid;

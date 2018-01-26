@@ -1,7 +1,7 @@
 const sumArray = require('./sum-array');
 const verifyFrames = require('./verify-frames');
 
-function score(scoresArray, framesCount = 10) {
+const score = (scoresArray, framesCount = 10) => {
   const validFrames = verifyFrames(scoresArray, framesCount);
   if (!validFrames) return undefined;
 
@@ -28,6 +28,6 @@ function score(scoresArray, framesCount = 10) {
 
   // Return the total score
   return sumArray(scoresPerFrame);
-}
+};
 
 module.exports = score;
