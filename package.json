@@ -28,5 +28,8 @@
     "eslint-plugin-react": "^7.5.1",
     "jest": "^22.1.4",
     "jsdoc": "^3.5.5"
+  },
+  "dependencies": {
+    "command-line-args": "^5.0.1"
   }
 }
