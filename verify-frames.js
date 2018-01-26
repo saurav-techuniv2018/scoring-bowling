@@ -71,6 +71,9 @@ function verifyFrames(scoresArray, frames = 10) {
   if (!fillBall) {
     return true;
   }
+  if (fillBall && scores.length > 1) {
+    return false;
+  }
 
   // Add fill ball
   if (!verifyNumber(scores[0])) {
