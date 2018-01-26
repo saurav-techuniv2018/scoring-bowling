@@ -1,13 +1,21 @@
-const isScoreValid = (inputNumber) => {
-  if (typeof inputNumber !== 'number') {
+/**
+ * checks whether the passed inputScore is a valid score or not in a game of bowling
+ * @param {Number} inputScore
+ * @returns {Boolean}
+ */
+const isScoreValid = (inputScore) => {
+  if (typeof inputScore !== 'number') {
     return false;
   }
 
-  if (inputNumber >= Infinity || inputNumber <= -Infinity) {
+  if (inputScore >= Infinity || inputScore <= -Infinity) {
     return false;
   }
 
-  if (inputNumber < 0 || inputNumber > 10) return false;
+  if (inputScore < 0 || inputScore > 10) {
+    return false;
+  }
+
   return true;
 };
 
