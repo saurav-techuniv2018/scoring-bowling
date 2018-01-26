@@ -8,6 +8,10 @@ const isScoreValid = require('./is-score-valid');
  * @returns {Boolean}
  */
 const verifyFrames = (scoresArray, frames = 10) => {
+  if (!scoresArray) {
+    return false;
+  }
+
   // Copy scoresArray to temporary array
   let scores = scoresArray.slice();
 

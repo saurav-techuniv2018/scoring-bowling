@@ -2,6 +2,12 @@ const verifyFrames = require('./verify-frames');
 
 describe('verifyFrames', () => {
   describe('should return false', () => {
+    test('when input is null', () => {
+      expect(verifyFrames(null)).toBe(false);
+    });
+    test('when input is undefined', () => {
+      expect(verifyFrames(undefined)).toBe(false);
+    });
     test('when input scores does not make up all 10 frames', () => {
       expect(verifyFrames([1, 4, 5, 4])).toBe(false);
     });
