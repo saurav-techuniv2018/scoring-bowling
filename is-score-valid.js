@@ -1,4 +1,4 @@
-function verifyNumber(inputNumber) {
+function isScoreValid(inputNumber) {
   if (typeof inputNumber !== 'number') {
     return false;
   }
@@ -11,4 +11,4 @@ function verifyNumber(inputNumber) {
   return true;
 }
 
-module.exports = verifyNumber;
+module.exports = isScoreValid;
