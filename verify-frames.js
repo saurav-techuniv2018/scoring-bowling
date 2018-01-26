@@ -1,5 +1,5 @@
 const sumArray = require('./sum-array');
-const verifyNumber = require('./verify-number');
+const isScoreValid = require('./is-score-valid');
 
 function verifyFrames(scoresArray, frames = 10) {
   // Copy scoresArray to temporary array
@@ -17,7 +17,7 @@ function verifyFrames(scoresArray, frames = 10) {
   const isValidFrames = scores.every((currentValue) => {
     // Return false if score is invalid or if frames have been
     // separated out till last round
-    if (!verifyNumber(currentValue)) { return false; }
+    if (!isScoreValid(currentValue)) { return false; }
 
     if (framesCount === frames - 1) {
       const lastRound = framesArray[frames - 1] || (framesArray[frames - 1] = []);
@@ -73,7 +73,7 @@ function verifyFrames(scoresArray, frames = 10) {
   }
 
   // Add fill ball
-  if (!verifyNumber(scores[0])) {
+  if (!isScoreValid(scores[0])) {
     return false;
   }
   lastRound.push(scores[0]);
