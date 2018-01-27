@@ -1,4 +1,4 @@
-const isScoreValid = require('./is-score-valid');
+const isScoreValid = require('../src/is-score-valid');
 
 describe(isScoreValid.name, () => {
   describe('Should return false when input is invalid', () => {

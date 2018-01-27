@@ -1,4 +1,4 @@
-const verifyFrames = require('./verify-frames');
+const verifyFrames = require('../src/verify-frames');
 
 describe('verifyFrames', () => {
   describe('should return false', () => {

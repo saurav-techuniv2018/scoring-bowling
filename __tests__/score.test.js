@@ -1,4 +1,4 @@
-const score = require('./score');
+const score = require('../src/score');
 
 describe('score', () => {
   describe('should return undefined', () => {

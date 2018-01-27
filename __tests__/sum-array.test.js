@@ -1,4 +1,4 @@
-const sumArray = require('./sum-array');
+const sumArray = require('../src/sum-array');
 
 describe(sumArray.name, () => {
   describe('should return zero', () => {
